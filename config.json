@@ -1,0 +1,16 @@
+{
+    "jenkinsUrl": "https://internal.pingcap.net/idc-jenkins",
+    "githubRepo": "https://github.com/PingCAP-QE/ci",
+    "branchSpecifier": "*/jenkins-pipelines",
+    "jenkinsUser": "root",
+    "jenkinsToken": "",
+    "pushToJenkins": false,
+    "fetchFromJenkins": true,
+    "jobs": [
+        {
+            "scriptBasePath": "jenkins/pipelines/ci/tidb/",
+            "name":"tidb_check_release_note",
+            "renameTo":""
+        }
+    ]
+}

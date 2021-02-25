@@ -1,0 +1,15 @@
+[package]
+name = "migrator"
+version = "0.1.0"
+authors = ["AsterNighT <klxjt99@outlook.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = "2.33.3"
+serde = { version = "1.0.123", features = ["derive"] }
+serde_json = "1.0.62"
+reqwest = { version = "0.11.1", features = ["json","blocking"] }
+futures = "0.3.13"
+quick-xml = "0.22.0"
