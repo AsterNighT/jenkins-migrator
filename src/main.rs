@@ -114,14 +114,16 @@ fn run_with_config_path(config: &str) -> Result<(), Box<dyn std::error::Error>> 
                 // if we don't keep a borrow elsewhere, we can clear the buffer to keep memory usage low
                 buf.clear();
             }
-            let path = format!("{}{}", job.script_base_path, name);
-            std::fs::OpenOptions::new()
+            let path = format!("{}/{}", job.script_base_path, name);
+            if !script.is_empty() {
+                std::fs::OpenOptions::new()
                 .read(true)
                 .write(true)
                 .create(true)
                 .truncate(true)
                 .open(path)?
                 .write_all(script.as_bytes())?;
+            }
         }
         if config.push_to_jenkins {
             let url = format!("{}/job/{}/config.xml", config.jenkins_url, job.name);
